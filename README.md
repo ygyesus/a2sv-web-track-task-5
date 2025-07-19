@@ -1,69 +1,86 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Contact Form with React Hook Form
 
-Currently, two official plugins are available:
+A simple contact form built using React and the `useForm` hook from react-hook-form for efficient form state management and validation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Form validation for required fields
+- Email format validation
+- Responsive design that works on mobile and desktop
+- Clean error messaging
+- DevTools integration for form debugging
+- Light/dark mode support
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- React
+- TypeScript
+- react-hook-form
+- Vite (assuming from the project structure)
+- CSS3
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ygyesus/a2sv-web-track-task-5.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd a2sv-web-track-task-5
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+1. Fill in the form fields:
+   - Name (required)
+   - Email (required, must be valid format)
+   - Message (required)
+2. Submit the form
+3. View the submitted data in the console
+
+## Form Validation Rules
+
+| Field    | Validation Rules                          |
+|----------|------------------------------------------|
+| Name     | Required                                 |
+| Email    | Required, must be valid email format    |
+| Message  | Required                                 |
+
+## Project Structure
+
+
+```markdown
+📦 src
+├── 📂 components
+│   └── 📄 ContactForm.tsx    
+├── 📄 main.tsx   
+├── 📄 index.css   
+├── 📄 App.tsx                 
+└── 📄 App.css                 
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Customization
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To modify the form:
+1. Edit the validation rules in `ContactForm.tsx`
+2. Adjust styles in `App.css`
+3. Change the form fields in the JSX
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Responsive Design
+
+The form adapts to different screen sizes:
+- Desktop: Input fields are 800px wide
+- Mobile (below 900px): Input fields shrink to 300px wide
+
